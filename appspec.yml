@@ -1,0 +1,10 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /var/www/html/ # This is where your web server (Apache/Nginx) serves files from.
+hooks:
+  AfterInstall:
+    - location: scripts/restart-webserver.sh
+      timeout: 300
+      runas: root
